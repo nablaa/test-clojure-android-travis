@@ -20,5 +20,5 @@ android:
 lein: ~/bin/lein
 
 script:
-    - DEBUG=1 lein with-profile travis droid compile
-    - DEBUG=1 lein with-profile travis droid create-apk
+    - DEBUG=1 lein with-profile travis droid build
+    - DEBUG=1 lein with-profile travis droid apk
