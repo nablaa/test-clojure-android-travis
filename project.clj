@@ -15,6 +15,15 @@
                  [neko/neko "4.0.0-alpha2"]]
   :profiles {:default [:dev]
 
+             :travis
+             [:android-common :android-user
+              {:dependencies [[org.clojure/tools.nrepl "0.2.10"]]
+               :target-path "target/debug"
+               :android {:aot :all-with-unused
+                         :rename-manifest-package "org.stuff.testapp.debug"
+                         :manifest-options {:app-name "TestApp (debug)"}
+                         :sdk-path "/usr/local/android-sdk/"}}]
+
              :dev
              [:android-common :android-user
               {:dependencies [[org.clojure/tools.nrepl "0.2.10"]]
